@@ -10,12 +10,13 @@ import UIKit
 
 class TempView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        layer.cornerRadius = 10
+        layer.shadowColor = UIColor.darkGray.cgColor
+        layer.shadowOpacity = 0.9
+        layer.shadowRadius = 5
     }
-    */
 
 }

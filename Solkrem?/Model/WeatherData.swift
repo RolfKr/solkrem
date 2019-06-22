@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct WeatherData {
+    
+    var uv: String?
+    var temp: String?
+}
