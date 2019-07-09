@@ -276,10 +276,8 @@ extension MainVC: PlaceNameDelegate {
     func didEnterLocatioName(location: CLLocation, region: String) {
         
         getPlacemark(forLocation: location) { (placemark, string) in
-            
             guard let placemark = placemark else {return}
             guard let city = placemark.locality else {return}
- 
             DispatchQueue.main.async {
                 self.updateCityLabel(city: city)
             }
