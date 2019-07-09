@@ -19,7 +19,8 @@
 		7E05CD2C22BE9744007D242C /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E05CD2B22BE9744007D242C /* WeatherCondition.swift */; };
 		7E05CD2E22BEABCD007D242C /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E05CD2D22BEABCD007D242C /* TempView.swift */; };
 		7E05CD3022BEACB1007D242C /* PopoutLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E05CD2F22BEACB1007D242C /* PopoutLabel.swift */; };
-		7E05CD3222BEB2FA007D242C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E05CD3122BEB2FA007D242C /* Assets.xcassets */; };
+		B7830C4722D270960088D373 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7830C4622D270960088D373 /* Media.xcassets */; };
+		B79F9DC422C29D8C007B6835 /* AddPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79F9DC322C29D8C007B6835 /* AddPlaceVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +38,8 @@
 		7E05CD2B22BE9744007D242C /* WeatherCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCondition.swift; sourceTree = "<group>"; };
 		7E05CD2D22BEABCD007D242C /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
 		7E05CD2F22BEACB1007D242C /* PopoutLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoutLabel.swift; sourceTree = "<group>"; };
-		7E05CD3122BEB2FA007D242C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B7830C4622D270960088D373 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		B79F9DC322C29D8C007B6835 /* AddPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +76,8 @@
 				7E05CD1E22BE7AA6007D242C /* Model */,
 				7E05CD1D22BE7AA2007D242C /* View */,
 				7E05CD1C22BE7A9C007D242C /* Controller */,
+				B7830C4622D270960088D373 /* Media.xcassets */,
 				7E05CD0E22BE79F0007D242C /* Main.storyboard */,
-				7E05CD3122BEB2FA007D242C /* Assets.xcassets */,
 				7E05CD0A22BE79F0007D242C /* AppDelegate.swift */,
 				7E05CD1322BE79F0007D242C /* LaunchScreen.storyboard */,
 				7E05CD1622BE79F0007D242C /* Info.plist */,
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				7E05CD0C22BE79F0007D242C /* MainVC.swift */,
+				B79F9DC322C29D8C007B6835 /* AddPlaceVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,7 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E05CD1522BE79F0007D242C /* LaunchScreen.storyboard in Resources */,
-				7E05CD3222BEB2FA007D242C /* Assets.xcassets in Resources */,
+				B7830C4722D270960088D373 /* Media.xcassets in Resources */,
 				7E05CD1022BE79F0007D242C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +204,7 @@
 				7E05CD2E22BEABCD007D242C /* TempView.swift in Sources */,
 				7E05CD2622BE87AF007D242C /* WeatherUV.swift in Sources */,
 				7E05CD2A22BE9121007D242C /* WeatherData.swift in Sources */,
+				B79F9DC422C29D8C007B6835 /* AddPlaceVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,13 +353,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3H92NGE9SW;
 				INFOPLIST_FILE = "Solkrem?/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rolfka.Solkrem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -367,13 +372,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3H92NGE9SW;
 				INFOPLIST_FILE = "Solkrem?/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rolfka.Solkrem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -12,16 +12,13 @@ import CoreLocation
 class MainVC: UIViewController {
     
     
-    
-    // ACKNOWLEDMENTS
-    // https://www.flaticon.com/free-icon/sunscreen_1861721#term=sunscreen&page=1&position=17
-    
-    
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var UVLabel: UILabel!
     @IBOutlet weak var weatherDescLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var needSunscreenLabel: UILabel!
+    @IBOutlet weak var adressLabel: UILabel!
+    @IBOutlet weak var positionBtn: UIButton!
     
     
     let locationManager = CLLocationManager()
@@ -37,6 +34,8 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
+        
+        positionBtn.imageView?.contentMode = .scaleAspectFit
 
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
@@ -47,14 +46,10 @@ class MainVC: UIViewController {
     }
     
     
-    func getWeather() {
-        
-        guard let locationLat = location?.latitude else {return}
-        guard let locationLon = location?.longitude else {return}
-        let latString = String(locationLat)
-        let lonString = String(locationLon)
+    func getWeather(latitude: String, longitude: String) {
 
-        networking.getUVStatus(appID: "52a3d9ce895b620fc9ae5ccc0b53d71f", latitude: latString, longitude: lonString) { (weatherUV) in
+
+        networking.getUVStatus(appID: "52a3d9ce895b620fc9ae5ccc0b53d71f", latitude: latitude, longitude: longitude) { (weatherUV) in
             guard let uv = weatherUV.value else {return}
             
             let formatted = String(uv)
@@ -66,7 +61,7 @@ class MainVC: UIViewController {
             }
         }
         
-        networking.getWeatherStatus(appID: "52a3d9ce895b620fc9ae5ccc0b53d71f", latitude: latString, longitude: lonString) { (weatherForecast) in
+        networking.getWeatherStatus(appID: "52a3d9ce895b620fc9ae5ccc0b53d71f", latitude: latitude, longitude: longitude) { (weatherForecast) in
             guard let myTemp = weatherForecast.main.temp else {return}
             guard let weatherID = weatherForecast.weather?.first?.id else {return}
             
@@ -80,6 +75,8 @@ class MainVC: UIViewController {
                 self.configureUI()
                 self.getWeatherIcon(id: weatherID)
             }
+            
+            
         }
 
     }
@@ -106,45 +103,56 @@ class MainVC: UIViewController {
     }
     
     func getSunscreenInfo(uvNum: Double) {
+
         let sunScreenInfo = condition.getSunTips(status: condition.getUVStatus(condition: uvNum))
         weatherDescLabel.text = sunScreenInfo
-        
-        let condition = WeatherCondition()
-
-        print(uvNum)
-        
+                
         switch condition.getUVStatus(condition: uvNum) {
         case "Lav":
-            return needSunscreenLabel.text = "Nivå: Lav"
+            return needSunscreenLabel.text = "Lav"
         case "Moderat":
-            return needSunscreenLabel.text = "Nivå: Moderat"
+            return needSunscreenLabel.text = "Moderat"
         case "Høy":
-            return needSunscreenLabel.text = "Nivå: Høy"
+            return needSunscreenLabel.text = "Høy"
         case "Svært Høy":
-            return needSunscreenLabel.text = "Nivå: Svært Høy"
+            return needSunscreenLabel.text = "Svært Høy"
         case "Ekstrem":
-            return needSunscreenLabel.text = "Nivå: Ekstrem"
+            return needSunscreenLabel.text = "Ekstrem"
         default:
-            return needSunscreenLabel.text = "Nivå: Ukjent"
+            return needSunscreenLabel.text = "Ukjent"
         }
-        /*
-        if uvNum < 3.0 {
-            needSunscreenLabel.text = "NEI"
-        } else {
-            needSunscreenLabel.text = "JA!"
-        }
-         */
     }
+
+    
     
     func getWeatherIcon(id: Int) {
         let weatherIcon = condition.getWeatherCondition(id: id)
         imageView.image = UIImage(named: weatherIcon)
     }
     
-    @IBAction func reloadLocation(_ sender: UIButton) {
+    @IBAction func reloadTapped(_ sender: UIButton) {
+        
         checkLocationServices()
+        
+        UIButton.animate(withDuration: 0.3,
+                         animations: {
+                            sender.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
+        },
+                         completion: { finish in
+                            UIButton.animate(withDuration: 0.2, animations: {
+                                sender.transform = CGAffineTransform.identity
+                            })
+        })
+    
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addPlaceSegue" {
+            if let addPlaceVC = segue.destination as? AddPlaceVC {
+                addPlaceVC.placeNameDelegate = self
+            }
+        }
+    }
     
     
 }
@@ -170,8 +178,28 @@ extension MainVC : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let myLocation = locations.first {
             location = Location(latitude: myLocation.coordinate.latitude, longitude: myLocation.coordinate.longitude)
-            getWeather()
+            
+            guard let location = location else {return}
+            guard let loc = locations.first else {return}
+            
+            getPlacemark(forLocation: loc) { (placemark, string) in
+                guard let placeCity = placemark?.locality else {return}
+                let city = String(placeCity)
+                
+                DispatchQueue.main.async {
+                    self.updateCityLabel(city: city)
+                }
+            }
+            
+            let latitude = String(location.latitude!)
+            let longitude = String(location.longitude!)
+            
+            getWeather(latitude: latitude, longitude: longitude)
         }
+    }
+    
+    func updateCityLabel(city: String) {
+        adressLabel.text = "\(city)"
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -200,6 +228,29 @@ extension MainVC : CLLocationManagerDelegate {
             break
         }
     }
+    
+    func getPlacemark(forLocation location: CLLocation, completionHandler: @escaping (CLPlacemark?, String?) -> ()) {
+        let geocoder = CLGeocoder()
+        
+        
+        
+        geocoder.reverseGeocodeLocation(location, completionHandler: {
+            placemarks, error in
+            
+            if let err = error {
+                completionHandler(nil, err.localizedDescription)
+            } else if let placemarkArray = placemarks {
+                if let placemark = placemarkArray.first {
+                    completionHandler(placemark, nil)
+                } else {
+                    completionHandler(nil, "Unable to find placemark")
+                }
+            } else {
+                completionHandler(nil, "Unknown error")
+            }
+        })
+        
+    }
 }
 
 extension Double {
@@ -213,5 +264,25 @@ extension Double {
         }
         
         return Int(self)
+    }
+}
+
+extension MainVC: PlaceNameDelegate {
+    
+    func didEnterPlaceName(latitiude: String, longitude: String, region: String) {
+        getWeather(latitude: latitiude, longitude: longitude)
+    }
+    
+    func didEnterLocatioName(location: CLLocation, region: String) {
+        
+        getPlacemark(forLocation: location) { (placemark, string) in
+            
+            guard let placemark = placemark else {return}
+            guard let city = placemark.locality else {return}
+ 
+            DispatchQueue.main.async {
+                self.updateCityLabel(city: city)
+            }
+        }
     }
 }

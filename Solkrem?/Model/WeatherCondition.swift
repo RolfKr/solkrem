@@ -34,15 +34,15 @@ struct WeatherCondition {
         switch status {
             
         case "Lav":
-            return "Ingen fare for UV stråler. Gå ut og nyt solen!"
+            return "Ingen fare for UV stråler. Gå ut og nyt solen!\n Sikker soltid: 1 dag"
         case "Moderat":
-            return "Klær, solhatt og solbriller gir deg god beskyttelse. Ta deg en pause i skyggen, eller bruk solkrem."
+            return "Klær, solhatt og solbriller gir deg god beskyttelse. Ta deg en pause i skyggen, eller bruk solkrem.\n\n Sikker soltid: 1 - 2 timer"
         case "Høy":
-            return "Mellom klokken 12:00 til 15:00 tar solen sterkest, ta deg i så tilfelle en pause i skyggen. Bruk solkrem med faktor 15 eller oppover"
+            return "Mellom klokken 12:00 til 15:00 tar solen sterkest, ta deg i så tilfelle en pause i skyggen. Bruk solkrem med faktor 15 eller oppover.\n\n Sikker soltid: 30 minutter - 1 time"
         case "Svært Høy":
-            return "Unngå solen mellom klokken 12:00 til 15:00, ta deg heller en pause i skyggen. Kle deg godt for å beskytte deg mot solen og bruk solkrem med faktor 15 eller oppover"
+            return "Unngå solen mellom klokken 12:00 til 15:00, ta deg heller en pause i skyggen. Kle deg godt for å beskytte deg mot solen og bruk solkrem med faktor 15 eller oppover.\n\n Sikker soltid: 15 - 30 minutter"
         case "Ekstrem":
-            return "Unngå solen mellom klokken 12:00 til 15:00, ta deg heller en pause i skyggen. Kle deg godt for å beskytte deg mot solen og smør deg ofte med solkrem. Bruk faktor 15 eller oppover."
+            return "Unngå solen mellom klokken 12:00 til 15:00, ta deg heller en pause i skyggen. Kle deg godt for å beskytte deg mot solen og smør deg ofte med solkrem. Bruk faktor 15 eller oppover.\n\n Sikker soltid: 5 - 15 minutter"
        
         default:
             return "x"
@@ -56,7 +56,7 @@ struct WeatherCondition {
         case 200...299:
             return "thunderstorm"
         case 300...399:
-            return "drizzle"
+            return "rain"
         case 500...599:
             return "rain"
         case 600...699:
@@ -69,7 +69,7 @@ struct WeatherCondition {
             return "clouds"
         
         default:
-            return ""
+            return "clear"
         }
     }
 }

@@ -20,3 +20,17 @@ class PopoutLabel: UILabel {
     }
 
 }
+
+
+class PopoutButton: UIButton {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        layer.cornerRadius = 15
+        layer.shadowColor = UIColor.darkGray.cgColor
+        layer.shadowOpacity = 0.6
+        layer.shadowRadius = 3
+    }
+    
+}

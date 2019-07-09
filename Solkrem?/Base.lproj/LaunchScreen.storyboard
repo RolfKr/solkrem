@@ -18,18 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="VVA-Eo-GvA">
-                                <rect key="frame" x="20.5" y="261.5" width="373" height="373"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="K6q-ju-Ddf">
+                                <rect key="frame" x="-504" y="73" width="1422" height="750"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="VVA-Eo-GvA" secondAttribute="height" multiplier="1:1" id="Ekc-4d-rKE"/>
+                                    <constraint firstAttribute="height" constant="750" id="IXD-jf-VcE"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.91883140799999996" green="0.66380661730000001" blue="0.27046543360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.94100904460000001" green="0.70317894219999999" blue="0.34107094999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="VVA-Eo-GvA" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4ER-kb-Gp0"/>
-                            <constraint firstItem="VVA-Eo-GvA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MX9-8z-GDS"/>
-                            <constraint firstItem="VVA-Eo-GvA" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.9" id="seF-rw-kNV"/>
+                            <constraint firstItem="K6q-ju-Ddf" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="dH0-ye-tGN"/>
+                            <constraint firstItem="K6q-ju-Ddf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lIY-v8-tIn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="1024" height="1024"/>
+        <image name="logo" width="1422" height="2139"/>
     </resources>
 </document>
