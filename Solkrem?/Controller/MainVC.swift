@@ -14,7 +14,7 @@ class MainVC: UIViewController {
     
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var UVLabel: UILabel!
-    @IBOutlet weak var weatherDescLabel: UILabel!
+    @IBOutlet weak var weatherDescLabel: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var needSunscreenLabel: UILabel!
     @IBOutlet weak var adressLabel: UILabel!
@@ -33,6 +33,17 @@ class MainVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tempLabel.minimumScaleFactor = 0.1
+        tempLabel.adjustsFontSizeToFitWidth = true
+        tempLabel.lineBreakMode = .byClipping
+        tempLabel.numberOfLines = 0
+        
+        UVLabel.minimumScaleFactor = 0.1
+        UVLabel.adjustsFontSizeToFitWidth = true
+        UVLabel.lineBreakMode = .byClipping
+        UVLabel.numberOfLines = 0
+        
         checkLocationServices()
         
         positionBtn.imageView?.contentMode = .scaleAspectFit

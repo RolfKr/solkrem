@@ -34,15 +34,15 @@ struct WeatherCondition {
         switch status {
             
         case "Lav":
-            return "Ingen fare for UV stråler. Gå ut og nyt solen!\n Sikker soltid: 1 dag"
+            return "Ingen beskyttelse nødvendig."
         case "Moderat":
-            return "Klær, solhatt og solbriller gir deg god beskyttelse. Ta deg en pause i skyggen, eller bruk solkrem.\n\n Sikker soltid: 1 - 2 timer"
+            return "Beskyttelse kan være nødvendig. Klær, hodeplagg og solbriller gir god beskyttelse. Husk også solkrem. SPF 15 ved direkte sollys eller ved vannet."
         case "Høy":
-            return "Mellom klokken 12:00 til 15:00 tar solen sterkest, ta deg i så tilfelle en pause i skyggen. Bruk solkrem med faktor 15 eller oppover.\n\n Sikker soltid: 30 minutter - 1 time"
+            return "Beskyttelse er nødvendig. Begrens tiden i solen midt på dagen. Bruk klær, hodeplagg, solbriller og smør deg med solkrem med høy faktor. SPF 15 ved direkte sollys eller ved vannet."
         case "Svært Høy":
-            return "Unngå solen mellom klokken 12:00 til 15:00, ta deg heller en pause i skyggen. Kle deg godt for å beskytte deg mot solen og bruk solkrem med faktor 15 eller oppover.\n\n Sikker soltid: 15 - 30 minutter"
+            return "Ekstra beskyttelse er nødvendig. Unngå solen midt på dagen og søk skygge. Bruk klær, hodeplagg, solbriller og smør deg ofte med solkrem med høy eller svært høy faktor. SPF 30 er anbefalt om man er ute mellom 12:00 og 16:00"
         case "Ekstrem":
-            return "Unngå solen mellom klokken 12:00 til 15:00, ta deg heller en pause i skyggen. Kle deg godt for å beskytte deg mot solen og smør deg ofte med solkrem. Bruk faktor 15 eller oppover.\n\n Sikker soltid: 5 - 15 minutter"
+            return "Ekstra beskyttelse er absolutt nødvendig. Unngå solen og søk skygge midt på dagen. Om du skal ferdes ute anbefales det at man dekker seg til og SPF 30 eller høyere"
        
         default:
             return "x"

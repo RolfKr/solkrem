@@ -31,6 +31,11 @@ class AddPlaceVC: UIViewController {
         convertToCoords()
     }
     
+    @IBAction func closeBtnTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     func presentAlert(){
         let alert = UIAlertController(title: "Feil", message: "Oppgitt lokasjon finnes ikke", preferredStyle: .alert)
         let action = UIAlertAction(title: "Lukk", style: .default, handler: nil)
