@@ -80,7 +80,7 @@
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear" translatesAutoresizingMaskIntoConstraints="NO" id="adh-EU-0gd">
-                                        <rect key="frame" x="40" y="65" width="184" height="184"/>
+                                        <rect key="frame" x="20" y="65" width="184" height="184"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="adh-EU-0gd" secondAttribute="height" multiplier="1:1" id="6GT-PY-b7O"/>
                                         </constraints>
@@ -94,7 +94,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blabla" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rKa-wT-8WF" customClass="Ma">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rKa-wT-8WF" customClass="Ma">
                                                 <rect key="frame" x="0.0" y="64.5" width="165.5" height="64"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -119,7 +119,7 @@
                                     <constraint firstItem="7Db-jn-Rnw" firstAttribute="width" secondItem="htU-e5-V5t" secondAttribute="width" multiplier="0.4" id="7Ex-Zy-dph"/>
                                     <constraint firstAttribute="bottom" secondItem="adh-EU-0gd" secondAttribute="bottom" constant="20" id="IFf-RU-wxB"/>
                                     <constraint firstItem="Icf-d6-Cly" firstAttribute="top" secondItem="htU-e5-V5t" secondAttribute="top" constant="15" id="M68-UJ-spo"/>
-                                    <constraint firstItem="adh-EU-0gd" firstAttribute="leading" secondItem="htU-e5-V5t" secondAttribute="leading" constant="40" id="ZIW-KM-eKu"/>
+                                    <constraint firstItem="adh-EU-0gd" firstAttribute="leading" secondItem="htU-e5-V5t" secondAttribute="leading" constant="20" id="ZIW-KM-eKu"/>
                                     <constraint firstAttribute="trailing" secondItem="7Db-jn-Rnw" secondAttribute="trailing" constant="20" id="eCp-g9-IMt"/>
                                     <constraint firstItem="7Db-jn-Rnw" firstAttribute="centerY" secondItem="adh-EU-0gd" secondAttribute="centerY" id="gDA-g5-jpo"/>
                                     <constraint firstItem="adh-EU-0gd" firstAttribute="top" secondItem="Icf-d6-Cly" secondAttribute="bottom" constant="20" id="p2F-lp-33g"/>
@@ -244,39 +244,33 @@
                                     <constraint firstItem="c1Y-e7-KCA" firstAttribute="centerX" secondItem="KgS-0D-c0i" secondAttribute="centerX" id="eDO-pz-obB"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRD-Zf-hyf" userLabel="TopView">
-                                <rect key="frame" x="0.0" y="100" width="414" height="179"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5O-n3-ejs" userLabel="MiddleView">
+                                <rect key="frame" x="0.0" y="100" width="414" height="632"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hva gjør UV med deg?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDY-bw-fxc">
-                                        <rect key="frame" x="98" y="129" width="218" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="clj-Fj-qTw">
+                                        <rect key="frame" x="60" y="246" width="294" height="316"/>
+                                        <string key="text">De vanligste akutte helseskadene forbundet med UV-stråling er solforbrenning og snøblindhet (hornhinnebetennelse). 
+Blant kroniske helseskader er grå stær (katarakt), nedsatt immunforsvar,  aldring av huden og hudkreft. I Norge får nesten 10 000 personer hvert år en form for hudkreft. 
+En stor andel skyldes eksponering av sol.</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Hva gjør UV med deg?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QDY-bw-fxc">
+                                        <rect key="frame" x="20" y="196" width="374" height="30"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="QDY-bw-fxc" firstAttribute="centerX" secondItem="FRD-Zf-hyf" secondAttribute="centerX" id="2Ql-wl-IX8"/>
-                                    <constraint firstAttribute="bottom" secondItem="QDY-bw-fxc" secondAttribute="bottom" constant="20" id="c8U-YS-nYx"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5O-n3-ejs" userLabel="MiddleView">
-                                <rect key="frame" x="0.0" y="279" width="414" height="453"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tIJ-Kk-acx">
-                                        <rect key="frame" x="60" y="20" width="294" height="413"/>
-                                        <mutableString key="text">De vanligste akutte helseskadene forbundet med UV-stråling er solforbrenning og snøblindhet (hornhinnebetennelse). 
-Blant kroniske helseskader er grå stær (katarakt), nedsatt immunforsvar,  aldring av huden og hudkreft. I Norge får nesten 10 000 personer hvert år en form for hudkreft. 
-En stor andel skyldes eksponering av sol.</mutableString>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="tIJ-Kk-acx" firstAttribute="top" secondItem="Z5O-n3-ejs" secondAttribute="top" constant="20" id="4Ac-Du-daN"/>
-                                    <constraint firstAttribute="bottom" secondItem="tIJ-Kk-acx" secondAttribute="bottom" constant="20" id="WuH-VU-UYU"/>
-                                    <constraint firstAttribute="trailing" secondItem="tIJ-Kk-acx" secondAttribute="trailing" constant="60" id="cDd-sv-CBJ"/>
-                                    <constraint firstItem="tIJ-Kk-acx" firstAttribute="leading" secondItem="Z5O-n3-ejs" secondAttribute="leading" constant="60" id="uvi-58-LaM"/>
+                                    <constraint firstAttribute="bottom" secondItem="clj-Fj-qTw" secondAttribute="bottom" constant="70" id="1SI-6c-VeR"/>
+                                    <constraint firstItem="clj-Fj-qTw" firstAttribute="leading" secondItem="Z5O-n3-ejs" secondAttribute="leading" constant="60" id="3tb-Bo-HkQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="QDY-bw-fxc" secondAttribute="trailing" constant="20" id="3zA-uT-6Nh"/>
+                                    <constraint firstItem="clj-Fj-qTw" firstAttribute="top" secondItem="QDY-bw-fxc" secondAttribute="bottom" constant="20" id="SaN-51-suj"/>
+                                    <constraint firstAttribute="trailing" secondItem="clj-Fj-qTw" secondAttribute="trailing" constant="60" id="X2B-AB-qEH"/>
+                                    <constraint firstItem="QDY-bw-fxc" firstAttribute="leading" secondItem="Z5O-n3-ejs" secondAttribute="leading" constant="20" id="f7h-CE-IQV"/>
+                                    <constraint firstItem="clj-Fj-qTw" firstAttribute="height" secondItem="Z5O-n3-ejs" secondAttribute="height" multiplier="0.5" id="wqD-dn-V1h"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uia-8G-Ym5" userLabel="BottomView">
@@ -318,20 +312,15 @@ En stor andel skyldes eksponering av sol.</mutableString>
                         <color key="backgroundColor" red="0.94100904460000001" green="0.70317894219999999" blue="0.34107094999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="KgS-0D-c0i" firstAttribute="trailing" secondItem="aSd-cg-lsT" secondAttribute="trailing" id="7nN-Rq-yeT"/>
-                            <constraint firstItem="FRD-Zf-hyf" firstAttribute="top" secondItem="KgS-0D-c0i" secondAttribute="bottom" id="F8a-gw-Ohv"/>
                             <constraint firstItem="uia-8G-Ym5" firstAttribute="top" secondItem="Z5O-n3-ejs" secondAttribute="bottom" id="Pwr-Lj-A6B"/>
-                            <constraint firstItem="Z5O-n3-ejs" firstAttribute="top" secondItem="FRD-Zf-hyf" secondAttribute="bottom" id="QdO-eo-mVG"/>
                             <constraint firstItem="uia-8G-Ym5" firstAttribute="trailing" secondItem="aSd-cg-lsT" secondAttribute="trailing" id="QsF-We-by2"/>
                             <constraint firstItem="Z5O-n3-ejs" firstAttribute="trailing" secondItem="aSd-cg-lsT" secondAttribute="trailing" id="Qtw-pf-4Sd"/>
-                            <constraint firstItem="FRD-Zf-hyf" firstAttribute="height" secondItem="w3l-lE-TTM" secondAttribute="height" multiplier="0.2" id="VPE-Kn-oZx"/>
-                            <constraint firstItem="aSd-cg-lsT" firstAttribute="trailing" secondItem="FRD-Zf-hyf" secondAttribute="trailing" id="XTH-c3-vMs"/>
-                            <constraint firstItem="FRD-Zf-hyf" firstAttribute="leading" secondItem="aSd-cg-lsT" secondAttribute="leading" id="fts-Bl-BSm"/>
-                            <constraint firstItem="Z5O-n3-ejs" firstAttribute="height" secondItem="w3l-lE-TTM" secondAttribute="height" multiplier="0.4" priority="750" id="gXa-XT-Q2c"/>
                             <constraint firstAttribute="bottom" secondItem="uia-8G-Ym5" secondAttribute="bottom" id="kRy-ld-TBd"/>
                             <constraint firstItem="uia-8G-Ym5" firstAttribute="leading" secondItem="aSd-cg-lsT" secondAttribute="leading" id="lVb-7L-7sj"/>
                             <constraint firstItem="KgS-0D-c0i" firstAttribute="leading" secondItem="aSd-cg-lsT" secondAttribute="leading" id="p7Y-hQ-bcF"/>
                             <constraint firstItem="KgS-0D-c0i" firstAttribute="top" secondItem="w3l-lE-TTM" secondAttribute="top" id="vUp-Fu-m7Z"/>
                             <constraint firstItem="Z5O-n3-ejs" firstAttribute="leading" secondItem="aSd-cg-lsT" secondAttribute="leading" id="vus-v0-Oen"/>
+                            <constraint firstItem="Z5O-n3-ejs" firstAttribute="top" secondItem="KgS-0D-c0i" secondAttribute="bottom" id="yqG-YE-apO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aSd-cg-lsT"/>
                     </view>
@@ -369,7 +358,7 @@ En stor andel skyldes eksponering av sol.</mutableString>
                                 <rect key="frame" x="10" y="110" width="394" height="358.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Trondheim" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ua5-gh-7tw">
-                                        <rect key="frame" x="50" y="135" width="294" height="35"/>
+                                        <rect key="frame" x="50" y="130" width="294" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="0bu-ca-tB1"/>
                                         </constraints>
@@ -378,7 +367,7 @@ En stor andel skyldes eksponering av sol.</mutableString>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XNY-LM-wCZ" userLabel="SearhBtnStack">
-                                        <rect key="frame" x="165" y="195" width="64" height="20"/>
+                                        <rect key="frame" x="165" y="190" width="64" height="20"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLj-58-Cqn">
                                                 <rect key="frame" x="0.0" y="0.0" width="36" height="20"/>
@@ -407,8 +396,8 @@ En stor andel skyldes eksponering av sol.</mutableString>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hvor vil du?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Ze-Ec-CIL">
-                                        <rect key="frame" x="138.5" y="80" width="117.5" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legg inn stedsnavn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Ze-Ec-CIL">
+                                        <rect key="frame" x="100.5" y="80" width="193" height="30"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -419,7 +408,7 @@ En stor andel skyldes eksponering av sol.</mutableString>
                                     <constraint firstItem="XNY-LM-wCZ" firstAttribute="centerX" secondItem="Rn7-1d-4ih" secondAttribute="centerX" id="4ua-uO-gOC"/>
                                     <constraint firstItem="3Ze-Ec-CIL" firstAttribute="top" secondItem="Rn7-1d-4ih" secondAttribute="top" constant="80" id="EY7-Zc-2vd"/>
                                     <constraint firstItem="ua5-gh-7tw" firstAttribute="leading" secondItem="Rn7-1d-4ih" secondAttribute="leading" constant="50" id="cTn-um-Lbg"/>
-                                    <constraint firstItem="ua5-gh-7tw" firstAttribute="top" secondItem="3Ze-Ec-CIL" secondAttribute="bottom" constant="25" id="g2U-az-v95"/>
+                                    <constraint firstItem="ua5-gh-7tw" firstAttribute="top" secondItem="3Ze-Ec-CIL" secondAttribute="bottom" constant="20" id="g2U-az-v95"/>
                                     <constraint firstItem="XNY-LM-wCZ" firstAttribute="top" secondItem="ua5-gh-7tw" secondAttribute="bottom" constant="25" id="h7y-dq-N8r"/>
                                     <constraint firstAttribute="trailing" secondItem="ua5-gh-7tw" secondAttribute="trailing" constant="50" id="lEc-7k-muX"/>
                                 </constraints>

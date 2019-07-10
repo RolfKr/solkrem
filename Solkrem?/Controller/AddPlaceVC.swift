@@ -49,21 +49,22 @@ class AddPlaceVC: UIViewController {
         
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(place) { (placemarks, error) in
-            guard
-                let placemarks = placemarks,
-                let location = placemarks.first?.location
-                else {return self.adressValid = false}
             
-            print(location.coordinate.latitude)
-            print(location.coordinate.longitude)
-            
-            self.adressValid = true
-            let longitude = String(location.coordinate.longitude)
-            let latitude = String(location.coordinate.latitude)
-            
-            self.placeNameDelegate?.didEnterPlaceName(latitiude: latitude, longitude: longitude, region: place)
-            self.placeNameDelegate?.didEnterLocatioName(location: location, region: place)
-            self.dismiss(animated: true, completion: nil)
+            if let placemarks = placemarks {
+                if let location = placemarks.first?.location {
+                    self.adressValid = true
+                    let longitude = String(location.coordinate.longitude)
+                    let latitude = String(location.coordinate.latitude)
+                    
+                    self.placeNameDelegate?.didEnterPlaceName(latitiude: latitude, longitude: longitude, region: place)
+                    self.placeNameDelegate?.didEnterLocatioName(location: location, region: place)
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    self.presentAlert()
+                }
+            } else {
+                self.presentAlert()
+            }
         }
     }
     
