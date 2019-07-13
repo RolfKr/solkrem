@@ -72,7 +72,7 @@
                                                         </constraints>
                                                         <state key="normal" image="map"/>
                                                         <connections>
-                                                            <segue destination="w0C-PW-1py" kind="presentation" identifier="addLocationSegue" id="WeU-GO-aUe"/>
+                                                            <segue destination="UWI-K8-YX4" kind="presentation" identifier="addLocationSegue" id="ZkG-RX-2zi"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -314,7 +314,7 @@ En stor andel skyldes eksponering av sol.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mMf-2A-L0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71.014492753623188" y="377.67857142857139"/>
+            <point key="canvasLocation" x="162" y="170"/>
         </scene>
         <!--Add PlaceVC-->
         <scene sceneID="o3R-GH-d0V">
@@ -462,20 +462,20 @@ En stor andel skyldes eksponering av sol.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOl-l3-VOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1923" y="-544"/>
+            <point key="canvasLocation" x="2691" y="-521"/>
         </scene>
         <!--Add LocationVC-->
-        <scene sceneID="AgM-kY-H09">
+        <scene sceneID="9b7-It-nFg">
             <objects>
-                <viewController id="w0C-PW-1py" customClass="AddLocationVC" customModule="Solkrem_" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="c8J-Jc-hPE">
+                <viewController id="UWI-K8-YX4" customClass="AddLocationVC" customModule="Solkrem_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sXH-7q-CqK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nUo-7B-yc1">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2c-fR-qqR">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOLKREM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0W7-si-x1h">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOLKREM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4O-FI-Bbd">
                                         <rect key="frame" x="128" y="40" width="158" height="48.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="41"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -484,100 +484,129 @@ En stor andel skyldes eksponering av sol.</string>
                                 </subviews>
                                 <color key="backgroundColor" red="0.87829297780000004" green="0.39118379349999999" blue="0.22737717630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="0W7-si-x1h" firstAttribute="centerX" secondItem="nUo-7B-yc1" secondAttribute="centerX" id="T5f-6p-MVc"/>
-                                    <constraint firstAttribute="height" constant="100" id="VKu-IB-4Xe"/>
-                                    <constraint firstItem="0W7-si-x1h" firstAttribute="top" secondItem="nUo-7B-yc1" secondAttribute="top" constant="40" id="pMg-aK-DMI"/>
+                                    <constraint firstItem="h4O-FI-Bbd" firstAttribute="top" secondItem="L2c-fR-qqR" secondAttribute="top" constant="40" id="UgS-bI-NWQ"/>
+                                    <constraint firstAttribute="height" constant="100" id="hDU-5M-Xsb"/>
+                                    <constraint firstItem="h4O-FI-Bbd" firstAttribute="centerX" secondItem="L2c-fR-qqR" secondAttribute="centerX" id="wMq-g0-krP"/>
                                 </constraints>
                             </view>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcQ-gW-4OL">
-                                <rect key="frame" x="0.0" y="100" width="414" height="414"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="lcQ-gW-4OL" secondAttribute="height" multiplier="1:1" id="XEC-Ot-d9s"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="w0C-PW-1py" id="0vj-fN-CYe"/>
-                                </connections>
-                            </mapView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="nui-LS-ldg">
-                                <rect key="frame" x="187" y="267" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="8nS-td-wtQ"/>
-                                    <constraint firstAttribute="height" constant="40" id="c3A-8G-oYx"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RR-eF-eSm">
-                                <rect key="frame" x="184" y="539" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="L9S-kg-8Pi"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="22"/>
-                                <state key="normal" title="Enter">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="enterBtnTapped:" destination="w0C-PW-1py" eventType="touchUpInside" id="rld-PW-kgy"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Uw4-6S-ncx">
-                                <rect key="frame" x="20" y="589" width="374" height="253"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0jG-ab-hni">
+                                <rect key="frame" x="5" y="105" width="404" height="531"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunscreen" translatesAutoresizingMaskIntoConstraints="NO" id="D6Y-9Y-lOy">
-                                        <rect key="frame" x="169" y="0.0" width="36" height="60"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pI-aA-day">
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="531"/>
+                                        <subviews>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5aL-Gm-DzW">
+                                                <rect key="frame" x="0.0" y="0.0" width="404" height="531"/>
+                                            </mapView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="UmX-da-lLP">
+                                                <rect key="frame" x="182" y="225.5" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="MeL-CX-3jB"/>
+                                                    <constraint firstAttribute="width" constant="40" id="SrE-Aq-hq3"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUr-SE-qu8">
+                                                <rect key="frame" x="344" y="471" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="CSt-Qu-I6a"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Qcr-8k-sMB"/>
+                                                </constraints>
+                                                <state key="normal" image="location-icon"/>
+                                                <connections>
+                                                    <action selector="centerLocationTapped:" destination="UWI-K8-YX4" eventType="touchUpInside" id="I17-g1-DBV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="36" id="4wF-Gq-iwY"/>
-                                            <constraint firstAttribute="height" constant="60" id="NsN-uc-LUZ"/>
+                                            <constraint firstItem="5aL-Gm-DzW" firstAttribute="leading" secondItem="3pI-aA-day" secondAttribute="leading" id="2PZ-AD-vTg"/>
+                                            <constraint firstAttribute="bottom" secondItem="5aL-Gm-DzW" secondAttribute="bottom" id="7wG-lM-epZ"/>
+                                            <constraint firstItem="5aL-Gm-DzW" firstAttribute="top" secondItem="3pI-aA-day" secondAttribute="top" id="92L-so-r7g"/>
+                                            <constraint firstAttribute="trailing" secondItem="OUr-SE-qu8" secondAttribute="trailing" constant="20" id="be9-By-rmO"/>
+                                            <constraint firstItem="UmX-da-lLP" firstAttribute="centerX" secondItem="3pI-aA-day" secondAttribute="centerX" id="ckI-eR-bHS"/>
+                                            <constraint firstItem="UmX-da-lLP" firstAttribute="centerY" secondItem="3pI-aA-day" secondAttribute="centerY" constant="-20" id="grz-sR-eXL"/>
+                                            <constraint firstAttribute="bottom" secondItem="OUr-SE-qu8" secondAttribute="bottom" constant="20" id="kic-93-r8l"/>
+                                            <constraint firstAttribute="trailing" secondItem="5aL-Gm-DzW" secondAttribute="trailing" id="xUK-Ij-b4G"/>
                                         </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info hentet fra helsedirektoratet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p7g-ri-cJ4">
-                                        <rect key="frame" x="68.5" y="74" width="237.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Z8-K6-LEt">
-                                        <rect key="frame" x="154" y="108" width="66" height="145"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
-                                        <state key="normal" title="X Lukk">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cancelBtnTapped:" destination="w0C-PW-1py" eventType="touchUpInside" id="xY0-Kv-Ngi"/>
-                                        </connections>
-                                    </button>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Aa3-1E-KiA">
+                                <rect key="frame" x="0.0" y="656" width="414" height="206"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UWP-6S-lLK">
+                                        <rect key="frame" x="184" y="0.0" width="46" height="39"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEd-Y4-Wms">
+                                                <rect key="frame" x="0.0" y="0.0" width="46" height="39"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="22"/>
+                                                <state key="normal" title="Enter">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="enterBtnTapped:" destination="UWI-K8-YX4" eventType="touchUpInside" id="R0u-r1-MzZ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="M2t-5v-O36">
+                                        <rect key="frame" x="0.0" y="69" width="414" height="137"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunscreen" translatesAutoresizingMaskIntoConstraints="NO" id="oSt-N5-soJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="LHm-h8-p6Q"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info hentet fra helsedirektoratet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="npF-8x-PSn">
+                                                <rect key="frame" x="88.5" y="68" width="237.5" height="20"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9X-Hj-p9F">
+                                                <rect key="frame" x="174" y="96" width="66" height="41"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
+                                                <state key="normal" title="X Lukk">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelBtnTapped:" destination="UWI-K8-YX4" eventType="touchUpInside" id="K6q-x2-1jo"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.94100904460000001" green="0.70317894219999999" blue="0.34107094999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.9424065948" green="0.70290189979999995" blue="0.34107911590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="nUo-7B-yc1" firstAttribute="top" secondItem="c8J-Jc-hPE" secondAttribute="top" id="3Dp-IE-hze"/>
-                            <constraint firstItem="lcQ-gW-4OL" firstAttribute="top" secondItem="nUo-7B-yc1" secondAttribute="bottom" id="3WF-XZ-fyr"/>
-                            <constraint firstItem="nui-LS-ldg" firstAttribute="centerY" secondItem="lcQ-gW-4OL" secondAttribute="centerY" constant="-20" id="7cV-v7-sbM"/>
-                            <constraint firstItem="Pwg-If-yoZ" firstAttribute="trailing" secondItem="Uw4-6S-ncx" secondAttribute="trailing" constant="20" id="8oa-mc-YR2"/>
-                            <constraint firstItem="Pwg-If-yoZ" firstAttribute="bottom" secondItem="Uw4-6S-ncx" secondAttribute="bottom" constant="20" id="AGe-z9-3es"/>
-                            <constraint firstItem="lcQ-gW-4OL" firstAttribute="leading" secondItem="Pwg-If-yoZ" secondAttribute="leading" id="L1j-le-DCe"/>
-                            <constraint firstItem="nUo-7B-yc1" firstAttribute="trailing" secondItem="Pwg-If-yoZ" secondAttribute="trailing" id="ahx-Sq-4wY"/>
-                            <constraint firstItem="0RR-eF-eSm" firstAttribute="top" secondItem="lcQ-gW-4OL" secondAttribute="bottom" constant="25" id="dbn-RH-qcm"/>
-                            <constraint firstItem="Pwg-If-yoZ" firstAttribute="trailing" secondItem="lcQ-gW-4OL" secondAttribute="trailing" id="grh-xk-tgL"/>
-                            <constraint firstItem="Uw4-6S-ncx" firstAttribute="leading" secondItem="Pwg-If-yoZ" secondAttribute="leading" constant="20" id="ljd-yN-I21"/>
-                            <constraint firstItem="Uw4-6S-ncx" firstAttribute="top" secondItem="0RR-eF-eSm" secondAttribute="bottom" constant="20" id="rbH-bO-XoY"/>
-                            <constraint firstItem="0RR-eF-eSm" firstAttribute="centerX" secondItem="c8J-Jc-hPE" secondAttribute="centerX" id="u2N-g2-6ml"/>
-                            <constraint firstItem="nui-LS-ldg" firstAttribute="centerX" secondItem="lcQ-gW-4OL" secondAttribute="centerX" id="xrM-TF-OA4"/>
-                            <constraint firstItem="nUo-7B-yc1" firstAttribute="leading" secondItem="Pwg-If-yoZ" secondAttribute="leading" id="zuc-bS-XBy"/>
+                            <constraint firstItem="0jG-ab-hni" firstAttribute="leading" secondItem="zqm-Qk-Tsa" secondAttribute="leading" constant="5" id="5mc-ih-j3d"/>
+                            <constraint firstItem="0jG-ab-hni" firstAttribute="top" secondItem="L2c-fR-qqR" secondAttribute="bottom" constant="5" id="Axo-3U-QjR"/>
+                            <constraint firstItem="L2c-fR-qqR" firstAttribute="top" secondItem="zqm-Qk-Tsa" secondAttribute="top" constant="-44" id="GVl-1q-WlI"/>
+                            <constraint firstItem="Aa3-1E-KiA" firstAttribute="leading" secondItem="sXH-7q-CqK" secondAttribute="leading" id="SbW-33-LD4"/>
+                            <constraint firstItem="Aa3-1E-KiA" firstAttribute="top" secondItem="0jG-ab-hni" secondAttribute="bottom" constant="20" id="Uc4-CJ-5sL"/>
+                            <constraint firstItem="zqm-Qk-Tsa" firstAttribute="trailing" secondItem="L2c-fR-qqR" secondAttribute="trailing" id="ZWp-oe-F6J"/>
+                            <constraint firstAttribute="trailing" secondItem="Aa3-1E-KiA" secondAttribute="trailing" id="a3R-jZ-npW"/>
+                            <constraint firstItem="Aa3-1E-KiA" firstAttribute="bottom" secondItem="zqm-Qk-Tsa" secondAttribute="bottom" id="sWI-hm-gAO"/>
+                            <constraint firstItem="L2c-fR-qqR" firstAttribute="leading" secondItem="sXH-7q-CqK" secondAttribute="leading" id="swr-s8-5J0"/>
+                            <constraint firstItem="0jG-ab-hni" firstAttribute="trailing" secondItem="zqm-Qk-Tsa" secondAttribute="trailing" constant="-5" id="xt0-am-fgD"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Pwg-If-yoZ"/>
+                        <viewLayoutGuide key="safeArea" id="zqm-Qk-Tsa"/>
                     </view>
                     <connections>
-                        <outlet property="enterBtn" destination="0RR-eF-eSm" id="OrU-hC-lSl"/>
-                        <outlet property="mapView" destination="lcQ-gW-4OL" id="arz-rC-Y1R"/>
+                        <outlet property="enterBtn" destination="cEd-Y4-Wms" id="hVT-IN-gXO"/>
+                        <outlet property="mapView" destination="5aL-Gm-DzW" id="Kwp-5h-xjT"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yuy-4V-grh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F1Z-Ng-4fm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1011.5942028985507" y="-545.08928571428567"/>
+            <point key="canvasLocation" x="900" y="-544"/>
         </scene>
     </scenes>
     <resources>
         <image name="clear" width="415" height="416"/>
+        <image name="location-icon" width="1792" height="1792"/>
         <image name="map" width="370" height="315.5"/>
         <image name="pin" width="256" height="256"/>
         <image name="position" width="913" height="1231"/>

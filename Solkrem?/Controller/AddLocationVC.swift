@@ -31,11 +31,11 @@ class AddLocationVC: UIViewController {
         mapView.showsUserLocation = false
         checkLocationAuthorization()
         
-//        if location == nil {
-//            enterBtn.isHidden = true
-//        } else {
-//            enterBtn.isHidden = false
-//        }
+        if location == nil {
+            enterBtn.isEnabled = false
+        } else {
+            enterBtn.isEnabled = true
+        }
     }
     
     @IBAction func enterBtnTapped(_ sender: UIButton) {
@@ -48,6 +48,11 @@ class AddLocationVC: UIViewController {
     @IBAction func cancelBtnTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func centerLocationTapped(_ sender: UIButton) {
+        centerViewOnUserLocation()
+    }
+    
     
     
     func setupLocationManager() {
