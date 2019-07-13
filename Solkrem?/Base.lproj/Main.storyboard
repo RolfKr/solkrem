@@ -495,8 +495,11 @@ En stor andel skyldes eksponering av sol.</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pI-aA-day">
                                         <rect key="frame" x="0.0" y="0.0" width="404" height="531"/>
                                         <subviews>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5aL-Gm-DzW">
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aL-Gm-DzW">
                                                 <rect key="frame" x="0.0" y="0.0" width="404" height="531"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="UWI-K8-YX4" id="xaV-Fj-IH1"/>
+                                                </connections>
                                             </mapView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="UmX-da-lLP">
                                                 <rect key="frame" x="182" y="225.5" width="40" height="40"/>
@@ -516,16 +519,29 @@ En stor andel skyldes eksponering av sol.</string>
                                                     <action selector="centerLocationTapped:" destination="UWI-K8-YX4" eventType="touchUpInside" id="I17-g1-DBV"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flb-4x-lg6">
+                                                <rect key="frame" x="354" y="20" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="8yV-UV-m9P"/>
+                                                    <constraint firstAttribute="width" constant="30" id="R4U-eE-C8X"/>
+                                                </constraints>
+                                                <state key="normal" image="searcher"/>
+                                                <connections>
+                                                    <action selector="searhBtnPressed:" destination="UWI-K8-YX4" eventType="touchUpInside" id="bpX-dC-RF0"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="5aL-Gm-DzW" firstAttribute="leading" secondItem="3pI-aA-day" secondAttribute="leading" id="2PZ-AD-vTg"/>
+                                            <constraint firstAttribute="trailing" secondItem="Flb-4x-lg6" secondAttribute="trailing" constant="20" id="4Kc-BM-MgT"/>
                                             <constraint firstAttribute="bottom" secondItem="5aL-Gm-DzW" secondAttribute="bottom" id="7wG-lM-epZ"/>
                                             <constraint firstItem="5aL-Gm-DzW" firstAttribute="top" secondItem="3pI-aA-day" secondAttribute="top" id="92L-so-r7g"/>
                                             <constraint firstAttribute="trailing" secondItem="OUr-SE-qu8" secondAttribute="trailing" constant="20" id="be9-By-rmO"/>
                                             <constraint firstItem="UmX-da-lLP" firstAttribute="centerX" secondItem="3pI-aA-day" secondAttribute="centerX" id="ckI-eR-bHS"/>
                                             <constraint firstItem="UmX-da-lLP" firstAttribute="centerY" secondItem="3pI-aA-day" secondAttribute="centerY" constant="-20" id="grz-sR-eXL"/>
                                             <constraint firstAttribute="bottom" secondItem="OUr-SE-qu8" secondAttribute="bottom" constant="20" id="kic-93-r8l"/>
+                                            <constraint firstItem="Flb-4x-lg6" firstAttribute="top" secondItem="3pI-aA-day" secondAttribute="top" constant="20" id="rdH-Fj-zuF"/>
                                             <constraint firstAttribute="trailing" secondItem="5aL-Gm-DzW" secondAttribute="trailing" id="xUK-Ij-b4G"/>
                                         </constraints>
                                     </view>
@@ -544,7 +560,7 @@ En stor andel skyldes eksponering av sol.</string>
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="enterBtnTapped:" destination="UWI-K8-YX4" eventType="touchUpInside" id="R0u-r1-MzZ"/>
+                                                    <action selector="enterBtnTapped:" destination="UWI-K8-YX4" eventType="touchUpInside" id="dMw-iu-21O"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -597,11 +613,12 @@ En stor andel skyldes eksponering av sol.</string>
                     <connections>
                         <outlet property="enterBtn" destination="cEd-Y4-Wms" id="hVT-IN-gXO"/>
                         <outlet property="mapView" destination="5aL-Gm-DzW" id="Kwp-5h-xjT"/>
+                        <outlet property="searhBtn" destination="Flb-4x-lg6" id="ptR-bf-gni"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1Z-Ng-4fm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900" y="-544"/>
+            <point key="canvasLocation" x="900.00000000000011" y="-544.41964285714278"/>
         </scene>
     </scenes>
     <resources>
@@ -610,7 +627,8 @@ En stor andel skyldes eksponering av sol.</string>
         <image name="map" width="370" height="315.5"/>
         <image name="pin" width="256" height="256"/>
         <image name="position" width="913" height="1231"/>
-        <image name="searchBtn" width="987" height="995"/>
+        <image name="searchBtn" width="256" height="256"/>
+        <image name="searcher" width="256" height="256"/>
         <image name="sunscreen" width="601" height="1218"/>
     </resources>
 </document>

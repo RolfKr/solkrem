@@ -47,15 +47,7 @@ class MainVC: UIViewController {
         checkLocationServices()
         
         positionBtn.imageView?.contentMode = .scaleAspectFit
-
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
-    
-    @objc func applicationDidBecomeActive() {
-        checkLocationServices()
-    }
-    
     
     func getWeather(latitude: String, longitude: String) {
 
