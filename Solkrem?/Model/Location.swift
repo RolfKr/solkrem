@@ -17,3 +17,15 @@ struct Location {
         self.longitude = longitude
     }
 }
+
+struct LocationString {
+    var latitude: String
+    var longitude: String
+    var city: String
+    
+    init(latitude: String, longitude: String, city: String) {
+        self.latitude = latitude
+        self.longitude = longitude
+        self.city = city
+    }
+}

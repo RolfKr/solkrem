@@ -158,9 +158,9 @@ class MainVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addPlaceSegue" {
-            if let addPlaceVC = segue.destination as? AddPlaceVC {
-                addPlaceVC.placeNameDelegate = self
+        if segue.identifier == "addLocationSegue" {
+            if let addLocationVC = segue.destination as? AddLocationVC {
+                addLocationVC.locationNameDelegate = self
             }
         }
     }
@@ -278,20 +278,21 @@ extension Double {
     }
 }
 
-extension MainVC: PlaceNameDelegate {
-    
+//extension MainVC: PlaceNameDelegate {
+//    func didEnterLocatioName(location: CLLocation, region: String) {
+//        getPlacemark(forLocation: location) { (placemark, string) in
+//            guard let placemark = placemark else {return}
+//            guard let city = placemark.locality else {return}
+//            DispatchQueue.main.async {
+//                self.updateCityLabel(city: city)
+//            }
+//        }
+//    }
+//}
+
+extension MainVC: LocationNameDelegate {
     func didEnterPlaceName(latitiude: String, longitude: String, region: String) {
         getWeather(latitude: latitiude, longitude: longitude)
-    }
-    
-    func didEnterLocatioName(location: CLLocation, region: String) {
-        
-        getPlacemark(forLocation: location) { (placemark, string) in
-            guard let placemark = placemark else {return}
-            guard let city = placemark.locality else {return}
-            DispatchQueue.main.async {
-                self.updateCityLabel(city: city)
-            }
-        }
+        updateCityLabel(city: region)
     }
 }
