@@ -26,12 +26,9 @@ class AddLocationVC: UIViewController, UISearchBarDelegate {
     var locationNameDelegate: LocationNameDelegate?    
     var location: LocationString?
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mapView.showsUserLocation = false
         checkLocationAuthorization()
     }
     
