@@ -15,11 +15,10 @@ class MainVC: UIViewController {
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var UVLabel: UILabel!
     @IBOutlet weak var weatherDescLabel: UITextView!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var needSunscreenLabel: UILabel!
     @IBOutlet weak var adressLabel: UILabel!
     @IBOutlet weak var positionBtn: UIButton!
-    
     
     let locationManager = CLLocationManager()
     let networking = Networking()
@@ -27,31 +26,18 @@ class MainVC: UIViewController {
     var location: Location?
     var temp: String?
     var uv: String?
-    var weatherData: WeatherData?
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tempLabel.minimumScaleFactor = 0.1
-        tempLabel.adjustsFontSizeToFitWidth = true
-        tempLabel.lineBreakMode = .byClipping
-        tempLabel.numberOfLines = 0
-        
-        UVLabel.minimumScaleFactor = 0.1
-        UVLabel.adjustsFontSizeToFitWidth = true
-        UVLabel.lineBreakMode = .byClipping
-        UVLabel.numberOfLines = 0
-        
         checkLocationServices()
-        
         positionBtn.imageView?.contentMode = .scaleAspectFit
     }
     
+    //Run network request to openweathermap. Get current weather and UV.
     func getWeather(latitude: String, longitude: String) {
 
-
+        //Get current UV
         networking.getUVStatus(appID: "52a3d9ce895b620fc9ae5ccc0b53d71f", latitude: latitude, longitude: longitude) { (weatherUV) in
             guard let uv = weatherUV.value else {return}
             
@@ -64,31 +50,30 @@ class MainVC: UIViewController {
             }
         }
         
+        //Get current weatherstatus
         networking.getWeatherStatus(appID: "52a3d9ce895b620fc9ae5ccc0b53d71f", latitude: latitude, longitude: longitude) { (weatherForecast) in
             guard let myTemp = weatherForecast.main.temp else {return}
             guard let weatherID = weatherForecast.weather?.first?.id else {return}
             
-            
+            //Data recieved is Kelvin. Need to convert to celsius
             let fromKelvin = myTemp - 273.15
             let formatted = String(format: "%.0f", fromKelvin)
-            
             self.temp = "\(formatted)℃"
             
             DispatchQueue.main.async {
                 self.configureUI()
                 self.getWeatherIcon(id: weatherID)
             }
-            
-            
         }
-
     }
     
+    //Configure labels based on data from network.
     func configureUI() {
         tempLabel.text = temp
         UVLabel.text = uv
     }
     
+    //Show alert to user informing that locationservices are not enabled.
     func locationServicesNotEnabled(){
         let alert = UIAlertController(title: "Mangler lokasjon", message: "Vi har ikke tilgang til å finne din lokasjon. Vennligst aktiver dette under innstillinger på din iPhone", preferredStyle: .alert)
         let action = UIAlertAction(title: "Lukk", style: .default, handler: nil)
@@ -97,8 +82,9 @@ class MainVC: UIViewController {
         present(alert, animated: true)
     }
     
+    //Show alert to user informing that we are not getting their position.
     func errorGettingLocation(){
-        let alert = UIAlertController(title: "Mangler GPS signal", message: "Vi mottar ikke noe GPS signal. Forsøk å gå til en annen lokasjon, eller prøv igjen senere.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Mangler GPS signal", message: "Vi mottar ikke noe GPS signal. Undersøk at GPS er skrudd på, eller beveg deg til en annen posisjon", preferredStyle: .alert)
         let action = UIAlertAction(title: "Lukk", style: .default, handler: nil)
         alert.addAction(action)
         
@@ -126,15 +112,15 @@ class MainVC: UIViewController {
         }
     }
 
-    
-    
+    //Get weathericon based on weatherdata recieved from network
     func getWeatherIcon(id: Int) {
-        let weatherIcon = condition.getWeatherCondition(id: id)
-        imageView.image = UIImage(named: weatherIcon)
+        let iconName = condition.getWeatherCondition(id: id)
+        weatherIcon.image = UIImage(named: iconName)
     }
     
+    //Reload current weatherdata. Move current position to users position.
+    //Animate the positionbutton. Pulsating effect
     @IBAction func reloadTapped(_ sender: UIButton) {
-        
         checkLocationServices()
         
         UIButton.animate(withDuration: 0.3,
@@ -219,13 +205,12 @@ extension MainVC : CLLocationManagerDelegate {
             break
         case .authorizedWhenInUse:
             locationManager.requestLocation()
-            
         case .denied:
             break
         case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         case .restricted:
-            //Show alert letting them now parental control might be on
+            // TODO: Show alert letting them now parental control might be on
             break
         default:
             break
@@ -234,8 +219,6 @@ extension MainVC : CLLocationManagerDelegate {
     
     func getPlacemark(forLocation location: CLLocation, completionHandler: @escaping (CLPlacemark?, String?) -> ()) {
         let geocoder = CLGeocoder()
-        
-        
         
         geocoder.reverseGeocodeLocation(location, completionHandler: {
             placemarks, error in
@@ -256,6 +239,7 @@ extension MainVC : CLLocationManagerDelegate {
     }
 }
 
+//Format the doubles. Use only one decimal point
 extension Double {
     var stringWithoutZeroFraction: String {
         return truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
@@ -270,18 +254,7 @@ extension Double {
     }
 }
 
-//extension MainVC: PlaceNameDelegate {
-//    func didEnterLocatioName(location: CLLocation, region: String) {
-//        getPlacemark(forLocation: location) { (placemark, string) in
-//            guard let placemark = placemark else {return}
-//            guard let city = placemark.locality else {return}
-//            DispatchQueue.main.async {
-//                self.updateCityLabel(city: city)
-//            }
-//        }
-//    }
-//}
-
+//Delegate method. Get current location entered manually by user.
 extension MainVC: LocationNameDelegate {
     func didEnterPlaceName(latitiude: String, longitude: String, region: String) {
         getWeather(latitude: latitiude, longitude: longitude)

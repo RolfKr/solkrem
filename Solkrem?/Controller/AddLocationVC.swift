@@ -23,7 +23,7 @@ class AddLocationVC: UIViewController, UISearchBarDelegate {
     let locationManager = CLLocationManager()
     let regionInMeter: Double = 10000
     var previousLocation: CLLocation?
-    var locationNameDelegate: LocationNameDelegate?    
+    var locationNameDelegate: LocationNameDelegate?
     var location: LocationString?
 
     override func viewDidLoad() {
@@ -33,9 +33,7 @@ class AddLocationVC: UIViewController, UISearchBarDelegate {
     }
     
     @IBAction func enterBtnTapped(_ sender: UIButton) {
-        print("Hello1")
         guard let location = location else {return}
-        print("Hello2")
         locationNameDelegate?.didEnterPlaceName(latitiude: location.latitude, longitude: location.longitude, region: location.city)
         
         dismiss(animated: true, completion: nil)
@@ -117,7 +115,7 @@ class AddLocationVC: UIViewController, UISearchBarDelegate {
             setupLocationManager()
             checkLocationServices()
         } else {
-            // Show alert letting the user know they have to turn location services on.
+            // TODO: Show alert letting the user know they have to turn location services on.
         }
     }
     
@@ -129,13 +127,13 @@ class AddLocationVC: UIViewController, UISearchBarDelegate {
             locationManager.startUpdatingLocation()
             previousLocation = getCenterLocation(for: mapView)
         case .denied:
-            //Show alert instructing them how to turn on permissions
+            // TODO: Show alert instructing them how to turn on permissions
             break
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
             break
         case .restricted:
-            //Show an alert about restricted.
+            // TODO: Show an alert about restricted status.
             break
         case .authorizedAlways:
             break
@@ -169,8 +167,6 @@ extension AddLocationVC: MKMapViewDelegate {
         let center = getCenterLocation(for: mapView)
         let geoCoder = CLGeocoder()
         
-
-        
         guard let previousLocation = self.previousLocation else {return}
         guard center.distance(from: previousLocation) > 50 else {return}
         
@@ -191,12 +187,6 @@ extension AddLocationVC: MKMapViewDelegate {
             let longitudeText = String(format: "%f", (placemark.location?.coordinate.longitude)!)
 
             self?.location = LocationString(latitude: latitudeText, longitude: longitudeText, city: city)
-
-            print(self?.location?.latitude)
-            print(self?.location?.longitude)
-            print(city)
-            
-            
         }
     }
 }

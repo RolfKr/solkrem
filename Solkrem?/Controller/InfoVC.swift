@@ -10,14 +10,7 @@ import UIKit
 
 class InfoVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-    
     @IBAction func closeBtnTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-
 }

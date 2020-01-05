@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2ph-An-IpI">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2ph-An-IpI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,6 +68,7 @@
                                                             <constraint firstAttribute="width" constant="30" id="G8g-t1-2ZW"/>
                                                             <constraint firstAttribute="height" constant="30" id="fCJ-2T-1W3"/>
                                                         </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="map"/>
                                                         <connections>
                                                             <segue destination="UWI-K8-YX4" kind="presentation" identifier="addLocationSegue" id="ZkG-RX-2zi"/>
@@ -208,11 +207,11 @@
                     <connections>
                         <outlet property="UVLabel" destination="rKa-wT-8WF" id="6de-tQ-JoI"/>
                         <outlet property="adressLabel" destination="WQW-6k-ujY" id="zrQ-Q2-aI3"/>
-                        <outlet property="imageView" destination="adh-EU-0gd" id="OkM-nR-MrS"/>
                         <outlet property="needSunscreenLabel" destination="tvK-e1-t86" id="tn9-8h-gpu"/>
                         <outlet property="positionBtn" destination="ZdV-86-fPh" id="iGq-Au-4GU"/>
                         <outlet property="tempLabel" destination="kfz-B5-3Y6" id="fFT-8w-4fM"/>
                         <outlet property="weatherDescLabel" destination="YPG-fg-5T4" id="8L7-3L-Nvd"/>
+                        <outlet property="weatherIcon" destination="adh-EU-0gd" id="kRR-5u-vDN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2CT-4m-PDG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -224,7 +223,7 @@
             <objects>
                 <viewController id="gBV-Mi-uyt" customClass="InfoVC" customModule="Solkrem_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w3l-lE-TTM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgS-0D-c0i">
@@ -245,19 +244,19 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PER-iz-Qka">
-                                <rect key="frame" x="40" y="130" width="334" height="682"/>
+                                <rect key="frame" x="40" y="130" width="334" height="628"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZGX-AH-VeF">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="532"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="478"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Hva gjør UV med deg?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yZI-eA-F6i">
-                                                <rect key="frame" x="58" y="0.0" width="218" height="180"/>
+                                                <rect key="frame" x="58" y="0.0" width="218" height="126"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="MPi-fx-kk3">
-                                                <rect key="frame" x="0.0" y="180" width="334" height="352"/>
+                                                <rect key="frame" x="0.0" y="126" width="334" height="352"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="MPi-fx-kk3" secondAttribute="height" multiplier="92:97" id="h9L-4L-J7q"/>
                                                 </constraints>
@@ -271,7 +270,7 @@ En stor andel skyldes eksponering av sol.</string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="d3Z-d7-Cu5">
-                                        <rect key="frame" x="134" y="548" width="66" height="134"/>
+                                        <rect key="frame" x="134" y="494" width="66" height="134"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunscreen" translatesAutoresizingMaskIntoConstraints="NO" id="xxg-7w-yAG">
                                                 <rect key="frame" x="13" y="0.0" width="40" height="67"/>
@@ -349,7 +348,6 @@ En stor andel skyldes eksponering av sol.</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="0bu-ca-tB1"/>
                                         </constraints>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -469,11 +467,11 @@ En stor andel skyldes eksponering av sol.</string>
             <objects>
                 <viewController id="UWI-K8-YX4" customClass="AddLocationVC" customModule="Solkrem_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sXH-7q-CqK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2c-fR-qqR">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="-44" width="414" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOLKREM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4O-FI-Bbd">
                                         <rect key="frame" x="128" y="40" width="158" height="48.5"/>
@@ -490,26 +488,26 @@ En stor andel skyldes eksponering av sol.</string>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0jG-ab-hni">
-                                <rect key="frame" x="5" y="105" width="404" height="531"/>
+                                <rect key="frame" x="5" y="61" width="404" height="521"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pI-aA-day">
-                                        <rect key="frame" x="0.0" y="0.0" width="404" height="531"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="521"/>
                                         <subviews>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aL-Gm-DzW">
-                                                <rect key="frame" x="0.0" y="0.0" width="404" height="531"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="404" height="521"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="UWI-K8-YX4" id="xaV-Fj-IH1"/>
                                                 </connections>
                                             </mapView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="UmX-da-lLP">
-                                                <rect key="frame" x="182" y="225.5" width="40" height="40"/>
+                                                <rect key="frame" x="182" y="220.5" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="MeL-CX-3jB"/>
                                                     <constraint firstAttribute="width" constant="40" id="SrE-Aq-hq3"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUr-SE-qu8">
-                                                <rect key="frame" x="344" y="471" width="40" height="40"/>
+                                                <rect key="frame" x="344" y="461" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="CSt-Qu-I6a"/>
                                                     <constraint firstAttribute="height" constant="40" id="Qcr-8k-sMB"/>
@@ -548,7 +546,7 @@ En stor andel skyldes eksponering av sol.</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Aa3-1E-KiA">
-                                <rect key="frame" x="0.0" y="656" width="414" height="206"/>
+                                <rect key="frame" x="0.0" y="602" width="414" height="206"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UWP-6S-lLK">
                                         <rect key="frame" x="184" y="0.0" width="46" height="39"/>
