@@ -5,5 +5,7 @@ The app uses a network API connected to openweathermap.org
 
 Technologies used
 * CoreLocation
+* REST API - https://openweathermap.org/api
 * Networking with Codable
 * CoreAnimation
+* Storyboard UI
