@@ -10,14 +10,14 @@ Technologies used
 * CoreAnimation
 * Storyboard UI
 
-#Main screen
+# Main screen
 
 ![alt test](MainScreen.png) 
 
-#Location screen
+# Location screen
 
 ![alt test](MapScreen.png) 
 
-#Info screen
+# Info screen
 
 ![alt test](InfoScreen.png)
