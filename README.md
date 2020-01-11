@@ -9,3 +9,15 @@ Technologies used
 * Networking with Codable
 * CoreAnimation
 * Storyboard UI
+
+#Main screen
+
+![alt test](MainScreen.png) 
+
+#Location screen
+
+![alt test](MapScreen.png) 
+
+#Info screen
+
+![alt test](InfoScreen.png)
